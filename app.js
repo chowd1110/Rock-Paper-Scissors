@@ -13,3 +13,17 @@ function getComputerChoice(){
     const randomNumber = Math.floor(Math.random()*3);
     return choices[randomNumber];
 }
+
+function game(userChoice){
+    const computerChoice = getComputerChoice();
+    const result = userChoice + computerChoice;
+    if (result == 'rs' || result == 'pr' || result == 'sp'){
+        win();
+    }
+    else if (result == 'rp' || result == 'ps' || result == 'sr'){ 
+        lose();
+    }
+    else {
+        draw();
+    }
+}
