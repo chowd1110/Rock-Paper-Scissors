@@ -13,10 +13,23 @@ function getComputerChoice(){
     const randomNumber = Math.floor(Math.random()*3);
     return choices[randomNumber];
 }
+
+function convertToWord(letter){
+    if (letter == 'r') {
+        return 'Rock';
+    } 
+    else if (letter =='p') {
+        return 'Paper';
+    }
+    else {
+        return 'Scissors';
+    }
+}
+
 function win(userChoice, computerChoice){
     userScore++;
     userScore_span.innerHTML = userScore;
-    result_p.innerHTML = `${userChoice} beats ${computerChoice}. You Win!`;
+    result_p.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(computerChoice)}. You Win!`;
 }
 
 function game(userChoice){
