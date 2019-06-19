@@ -32,6 +32,13 @@ function win(userChoice, computerChoice){
     result_p.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(computerChoice)}. You Win!`;
 }
 
+function lose (userChoice, computerChoice){
+    computerScore++;
+    computerScore_span.innerHTML = computerScore;
+    result_p.innerHTML = `${convertToWord(userChoice)} loses to ${convertToWord(computerChoice)}. You've lost.`;
+
+}
+
 function game(userChoice){
     const computerChoice = getComputerChoice();
     const result = userChoice + computerChoice;
@@ -39,7 +46,7 @@ function game(userChoice){
         win(userChoice,computerChoice);
     }
     else if (result == 'rp' || result == 'ps' || result == 'sr'){ 
-        lose();
+        lose(userChoice, computerChoice);
     }
     else {
         draw();
