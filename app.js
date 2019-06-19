@@ -39,6 +39,10 @@ function lose (userChoice, computerChoice){
 
 }
 
+function draw(userChoice, computerChoice){
+    result_p.innerHTML = `${convertToWord(userChoice)} equals ${convertToWord(computerChoice)}. That's a draw.`;
+}
+
 function game(userChoice){
     const computerChoice = getComputerChoice();
     const result = userChoice + computerChoice;
@@ -49,7 +53,7 @@ function game(userChoice){
         lose(userChoice, computerChoice);
     }
     else {
-        draw();
+        draw(userChoice, computerChoice);
     }
 }
 
