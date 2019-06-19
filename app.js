@@ -23,7 +23,7 @@ function game(userChoice){
     const computerChoice = getComputerChoice();
     const result = userChoice + computerChoice;
     if (result == 'rs' || result == 'pr' || result == 'sp'){
-        win();
+        win(userChoice,computerChoice);
     }
     else if (result == 'rp' || result == 'ps' || result == 'sr'){ 
         lose();
